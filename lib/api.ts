@@ -7,7 +7,7 @@ const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || "restaurant-sakura";
 
 export async function api<T>(
   path: string,
-  options?: RequestInit & { body?: unknown }
+  options?: Omit<RequestInit, "body"> & { body?: unknown }
 ): Promise<T> {
   const { body, ...rest } = options ?? {};
   const res = await fetch(`${BASE}${path}`, {
