@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1c1917;
+  --color-secondary: #dc2626;
+  --color-accent: #fef2f2;
+}
+
+body {
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* Défilement auto gauche → droite : les cartes défilent de la droite vers la gauche (contenu scroll vers la gauche) */
+@keyframes scroll-media {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-scroll-media {
+  animation: scroll-media 25s linear infinite;
+}
